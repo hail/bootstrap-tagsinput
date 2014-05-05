@@ -6,7 +6,7 @@
       return 'label label-info';
     },
     tagRemoveClass: function() {
-      return 'fa fa-close';
+      return 'fa fa-times';
     },
     itemValue: function(item) {
       return item ? item.toString() : item;
@@ -107,7 +107,7 @@
       self.itemsArray.push(item);
 
       // add a tag element
-      var $tag = $('<span class="tag ' + htmlEncode(tagClass) + '">' + htmlEncode(itemText) + '<i class="' + htmlEncode(tagRemoveClass) + '" data-role="remove"></i></span>');
+      var $tag = $('<a class="tag ' + htmlEncode(tagClass) + '">' + htmlEncode(itemText) + '<i class="' + htmlEncode(tagRemoveClass) + '" data-role="remove"></i></a>');
       $tag.data('item', item);
       self.findInputWrapper().before($tag);
       $tag.after(' ');
